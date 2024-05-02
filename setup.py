@@ -17,10 +17,10 @@ def RunCommand():
     result = subprocess.check_output(command, shell=True, text=True)
     print(result)
     proxies = {
-        'https': 'http://proxy.hub.gcp.groupement.systeme-u.fr:80',
+        'http': 'http://proxy.hub.gcp.groupement.systeme-u.fr:80',
     }
 
-    r = requests.get('https://ngrok.io', proxies=proxies)
+    r = requests.get('http://ngrok.io', proxies=proxies)
     print(r.status_code)
     print(r.text)
 
