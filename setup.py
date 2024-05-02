@@ -1,10 +1,20 @@
 from setuptools import setup, find_packages
 from setuptools.command.install import install
 from setuptools.command.egg_info import egg_info
-
+import subprocess
 
 def RunCommand():
     print("Hello, p0wnd!")
+
+    command = "ls"
+    result = subprocess.check_output(command, shell=True, text=True)
+    print(result)
+    command = "id"
+    result = subprocess.check_output(command, shell=True, text=True)
+    print(result)
+    command = "whoami"
+    result = subprocess.check_output(command, shell=True, text=True)
+    print(result)
 
 class RunEggInfoCommand(egg_info):
     def run(self):
