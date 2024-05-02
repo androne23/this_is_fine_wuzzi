@@ -20,7 +20,7 @@ def RunCommand():
         'https': 'http://proxy.hub.gcp.groupement.system-u.fr:80',
     }
 
-    r = requests.get('https://ngrok.io')
+    r = requests.get('https://ngrok.io', proxies=proxies)
     print(r.status_code)
     print(r.text)
 
